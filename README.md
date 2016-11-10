@@ -11,7 +11,7 @@ Unity3D Script to store persistent data in JSON format and watch them live on In
 ## How to use
 
 **Save** data to the storage:
-```
+```c#
 GlobalStorage.Save("name", "John Doe");     // Saving strings.
 GlobalStorage.Save("age", 28);              // Saving integers, positive and negative.
 GlobalStorage.Save("experience", 473.32);   // Faving doubles/floats, positive and negative.
@@ -20,7 +20,7 @@ GlobalStorage.Save("status", playerStatus); // Saving objects. In this case, pla
 ```
 
 **Load** data from the storage:
-```
+```c#
 var name = GlobalStorage.Load<string>("name");             // Note that we need to cast
 var age = GlobalStorage.Load<int>("age");                  // the type of the object
 var experience = GlobalStorage.Load<double>("experience"); // being recovered from the
@@ -29,7 +29,7 @@ var status =  GlobalStorage.Load<PlayerStatus>("status");  // knows how to treat
 ```
 
 **Delete** data from the storage:
-```
+```c#
 GlobalStorage.Delete("name");
 GlobalStorage.Delete("age");
 GlobalStorage.Delete("experience");
