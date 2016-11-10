@@ -37,6 +37,10 @@ GlobalStorage.Delete("isRunning");
 GlobalStorage.Delete("status");
 ```
 
+## Minimum Requirements
+
+Unity version 5.3.5f1, released 15 Mar 2016.
+
 ## License
 
 The MIT License  
