@@ -37,6 +37,16 @@ GlobalStorage.Delete("isRunning");
 GlobalStorage.Delete("status");
 ```
 
+## Installation
+
+#### - With [unity-packman](https://github.com/appetizermonster/unity-packman).
+
+```bash
+unity-packman install felladrin/unity3d-globalstorage
+```
+#### - Or with Asset Package
+Download [latest package](https://github.com/felladrin/unity3d-globalstorage/archive/master.zip).
+
 ## Minimum Requirements
 
 Unity version 5.3.5f1, released 15 Mar 2016.
