@@ -39,13 +39,8 @@ GlobalStorage.Delete("status");
 
 ## Installation
 
-#### - With [unity-packman](https://github.com/appetizermonster/unity-packman):
-
-```bash
-unity-packman install felladrin/unity3d-globalstorage
-```
-#### - Or manually:
-Download [latest version](https://github.com/felladrin/unity3d-globalstorage/archive/master.zip) and unzip it inside your _Assets_ folder. You can rename the folder to whathever you want.
+Download the [latest version](https://github.com/felladrin/unity3d-globalstorage/archive/master.zip) of this repository and unzip it inside your _Assets_ folder.  
+You can rename the folder to whathever you want.
 
 ## Minimum Requirements
 
