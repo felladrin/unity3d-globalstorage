@@ -2,6 +2,8 @@
 
 Unity3D Script to store persistent data in JSON format and watch them live on Inspector.
 
+![screenshot](screenshot.png)
+
 ## Features
 
 - **Singleton implementation**. Use it from anywhere on your code, from any scene.
