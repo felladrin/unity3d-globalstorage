@@ -10,6 +10,11 @@ Unity3D Script to store persistent data in JSON format and watch them live on In
 - **Categorization of data**. Data are categorized into Numbers, Strings, Booleans and Objects.
 - **Self-instantiates on scene**. You don't need to add it to the hierarchy. As soon as it's called, it shows up on the hierarchy autmoatically. Just click on it to see the data stored.
 
+## Installation
+
+[Download the latest unitypackage here](https://github.com/felladrin/unity3d-globalstorage/releases/latest) and import it to your project.  
+Once imported, you can move and rename the folder to whathever you want.
+
 ## How to use
 
 **Save** data to the storage:
@@ -38,11 +43,6 @@ GlobalStorage.Delete("experience");
 GlobalStorage.Delete("isRunning");
 GlobalStorage.Delete("status");
 ```
-
-## Installation
-
-Download the [latest version](https://github.com/felladrin/unity3d-globalstorage/archive/master.zip) of this repository and unzip it inside your _Assets_ folder.  
-You can rename the folder to whathever you want.
 
 ## Minimum Requirements
 
