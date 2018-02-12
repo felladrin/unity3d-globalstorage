@@ -92,7 +92,6 @@ public class GlobalStorage : MonoBehaviour
     [SerializeField] private List<GlobalStorageBoolean> booleans = new List<GlobalStorageBoolean>();
 
     [SerializeField] private List<GlobalStorageObject> objects = new List<GlobalStorageObject>();
-    private string _file1;
 
     #region Singleton definition
 
@@ -178,6 +177,7 @@ public class GlobalStorage : MonoBehaviour
                 {
                     instance.objects.Add(new GlobalStorageObject(key, serializedData));
                 }
+
                 File.WriteAllText(savePath, serializedData);
                 DebugMessage("Data stored to " + savePath);
             }
@@ -209,18 +209,30 @@ public class GlobalStorage : MonoBehaviour
         {
             if (TypeCodeIsNumeric(typeof(T)))
             {
-                data = (T) Convert.ChangeType(instance.numbers.Find(x => x.Key == key).Value, typeof(T));
-                DebugMessage("Data loaded from Numbers Array");
+                var globalStorageNumber = instance.numbers.Find(x => x.Key == key);
+                if (globalStorageNumber != null)
+                {
+                    data = (T) Convert.ChangeType(globalStorageNumber.Value, typeof(T));
+                    DebugMessage("Data loaded from Numbers Array");
+                }
             }
             else if (TypeCodeIsString(typeof(T)))
             {
-                data = (T) Convert.ChangeType(instance.strings.Find(x => x.Key == key).Value, typeof(T));
-                DebugMessage("Data loaded from Strings Array");
+                var globalStorageString = instance.strings.Find(x => x.Key == key);
+                if (globalStorageString != null)
+                {
+                    data = (T) Convert.ChangeType(globalStorageString.Value, typeof(T));
+                    DebugMessage("Data loaded from Strings Array");
+                }
             }
             else if (TypeCodeIsBoolean(typeof(T)))
             {
-                data = (T) Convert.ChangeType(instance.booleans.Find(x => x.Key == key).Value, typeof(T));
-                DebugMessage("Data loaded from Booleans Array");
+                var globalStorageBoolean = instance.booleans.Find(x => x.Key == key);
+                if (globalStorageBoolean != null)
+                {
+                    data = (T) Convert.ChangeType(globalStorageBoolean.Value, typeof(T));
+                    DebugMessage("Data loaded from Booleans Array");
+                }
             }
             else
             {
@@ -253,7 +265,8 @@ public class GlobalStorage : MonoBehaviour
 
         try
         {
-            if (instance.numbers.RemoveAll(x => x.Key == key) > 0 || instance.strings.RemoveAll(x => x.Key == key) > 0 ||
+            if (instance.numbers.RemoveAll(x => x.Key == key) > 0 ||
+                instance.strings.RemoveAll(x => x.Key == key) > 0 ||
                 instance.booleans.RemoveAll(x => x.Key == key) > 0)
             {
                 SaveSelf();
